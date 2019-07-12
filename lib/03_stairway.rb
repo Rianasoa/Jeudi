@@ -1,7 +1,9 @@
-def roll_dice
+#lancement du dé virtuel
+def dice_roll
   return rand(6)+1
 end
 
+#Condition des étapes pour la marche
 def analyze_dice(dice)
   if dice >=5
     puts "Vous avancez!"
@@ -15,10 +17,12 @@ def analyze_dice(dice)
   end
 end
 
-def show_state(step)
-  puts "Vous êtes sur la marche n° #{step}"
+#le rang de la marche où le joueur y est
+def show_state(num)
+  puts "Vous êtes sur la marche n° #{num}"
 end
 
+#si le joueur est à la 10ème marche, il a gagné
 def is_over?(num)
   if num == 10
     return true
@@ -27,10 +31,13 @@ def is_over?(num)
   end
 end
 
+#méthode pour demarrer le jeu
 def play
   puts "Bienvenue dans le jeu!!"
 
   step = 1
+  show_state(step)
+
   while(!is_over?(step)) do
     puts "tapez 'entrée' pour jouer"
     gets.chomp
