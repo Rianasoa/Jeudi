@@ -1,6 +1,5 @@
 def dé
-	puts"Bienvenue sur le jeu"
-	puts"Lancer le dé"
+	puts"Rélance le dé"
 	return rand(1..6)	
 end
 def analyze_dice(a)
@@ -26,13 +25,12 @@ def is_over?(num)
 		return false
 	end
 end	
-def play
-	puts"Bienvenue dans le jeu"
-	show_state(1)
 
-end
+
+
 def play
 	puts"Bienvenue dans la jeu"
+	puts"lancer le dé"
 	step=1
 	show_state(step)
 	 
