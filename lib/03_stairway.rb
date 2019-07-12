@@ -1,26 +1,47 @@
-def lance
-puts"Lancer le dé"
-dé = gets.chomp.to_i	
+def dé
+	puts"Bienvenue sur le jeu"
+	puts"Lancer le dé"
+	return rand(1..6)	
 end
-def boucle(dé)
-n =0
-x = n+1
-y = x-1
-puts"Lancer le dé"
-dé = gets.chomp.to_i
-while dé ==10 do
-	puts"Rélance le dé"		
-
-if dé > 6 then
-	puts"Erreur"
-elsif dé ==5||6
-	puts"Monter à une marche,vous êtes sur la marche n°#{x} maintenant "
-elsif dé == 1
-	puts"Tu dois descendre d'un marche, Vous êtes sur la marche n°#{y} maintenant"
-else
-puts"Tu reste là ou tu est, tu es à la marche "	
-
-	
+def analyze_dice(a)
+	if a>=5
+	puts"Vous avancez!"
+	return 1
+	elsif a == 1
+		puts "Vous reculez"
+		return -1
+	else
+		puts "Rien ne se passe, reste là"
+		return 0
+				
+	end
+end
+def show_state(num)
+	puts"Vous êtes sur la marche n° #{num}"	
+end
+def is_over?(num)
+	if num==10
+		return true
+	else
+		return false
+	end
 end	
+def play
+	puts"Bienvenue dans le jeu"
+	show_state(1)
+
 end
+def play
+	puts"Bienvenue dans la jeu"
+	step=1
+	show_state(step)
+	 
+	while (!is_over?(step)) do
+	puts"Taper 'Entrée' pour jouer"
+	gets.chomp
+	step=step+analyze_dice(dé)
+	show_state(step)	
+	end
+puts"Félicitation, vous avez gagneeeeeeeeeeeeeeeeeeeeeeeeeeeeee"		
 end
+	play
